@@ -4,6 +4,9 @@ This applcation was made with:
 - ASP.NET Core 7
 - SQL Server 2019
 
+Also, this API was published on free hosting.
+- Somee (Create Database and WebSite)
+
 Required packages:
 - Microsoft.EntityFrameworkCore.SqlServer 7.0.1
 - Microsoft.EntityFrameworkCore.Tools 7.0.1

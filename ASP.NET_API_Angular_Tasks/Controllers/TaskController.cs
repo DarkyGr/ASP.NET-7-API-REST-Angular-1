@@ -17,13 +17,13 @@ namespace ASP.NET_API_Angular_Tasks.Controllers
             _dbTasksContext = dbTasksContext;
         }
 
-        // Methods to Get List Tasks
+        // Methods to Get Tasks List
         [HttpGet]
         [Route("List")]
         public async Task<IActionResult> List()
         {
-            var listTask = await _dbTasksContext.Tasks.ToListAsync();   // Get Asyc List of database
-            return Ok(listTask);
+            var taskList = await _dbTasksContext.Tasks.ToListAsync();   // Get Asyc List of database
+            return Ok(taskList);
         }
 
         // Methods to Save Task

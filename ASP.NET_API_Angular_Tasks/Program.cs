@@ -15,14 +15,23 @@ builder.Services.AddDbContext<DbTasksContext>(option => {
     option.UseSqlServer(builder.Configuration.GetConnectionString("SQLString"));
 });
 
+// Active Cors 1
+builder.Services.AddCors(options => {
+    options.AddPolicy("NewPolicy", app => {     // Active any method of our API
+        app.AllowAnyOrigin()
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
+
+// Active Cors 2
+app.UseCors("NewPolicy");
 
 app.UseAuthorization();
 
